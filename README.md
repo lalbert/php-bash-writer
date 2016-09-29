@@ -9,7 +9,7 @@ Internally it uses [symfony/console](https://github.com/symfony/console) to mana
 
 The best way to install PHP Bash Writer it use composer
 
-    composer require lalbert/php-bash-writer
+    composer require lalbert/bash-writer
     
 ## Usage
 
