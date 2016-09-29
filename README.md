@@ -3,7 +3,7 @@ Write quickly and easily bash scripts with PHP.
 
 PHP Bash Writer is not designed to run bash script but only to facilitate writing scripts by adding styles (color, bold, ...) on the output.
 
-Internally it uses [https://github.com/symfony/console](symfony/console) to manage the color and styles (see [https://github.com/symfony/console/blob/master/Formatter/OutputFormatter.php](OutputFormatter)).
+Internally it uses [symfony/console](https://github.com/symfony/console) to manage the color and styles (see [OutputFormatter](https://github.com/symfony/console/blob/master/Formatter/OutputFormatter.php)).
 
 ## Installation
 
