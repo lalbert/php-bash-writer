@@ -7,8 +7,8 @@ class Command implements CommandInterface
     const COMMAND_EOL = "\n";
 
     private $command;
-    private $options;
 
+    protected $options;
     protected $print = true;
     protected $nl = true;
 
@@ -102,13 +102,13 @@ class Command implements CommandInterface
     public function getScript()
     {
         $script = '';
-        if (true === $this->print || \is_string($this->print)) {
-            $print = \is_bool($this->print) ? $this->getRawCommand() : $this->print;
+        if (true === $this->getPrint() || \is_string($this->getPrint())) {
+            $print = \is_bool($this->getPrint()) ? $this->getRawCommand() : $this->getPrint();
             $script = (new EchoCommand($print))->getScript();
         }
 
         $script .= $this->getCommand();
-        $script .= $this->nl ? self::COMMAND_EOL : '';
+        $script .= $this->getNl() ? self::COMMAND_EOL : '';
 
         return $script;
     }
