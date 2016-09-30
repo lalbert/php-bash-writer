@@ -65,7 +65,7 @@ class Command implements CommandInterface
     }
 
     /**
-     * @return bool
+     * @return bool|string
      */
     public function getPrint()
     {

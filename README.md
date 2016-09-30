@@ -28,7 +28,7 @@ $sh->addCommand('touch <bg=yellow;options=bold>file.txt</>'); // print 'touch fi
 $sh->addCommand('echo "content file" > file.txt', ['print' => false]); // add content in file.txt, shows nothing
 
 $sh->newLine(true);
-$sh->print('<info>Done</info>'); // print "Done" in green text
+$sh->output('<info>Done</info>'); // print "Done" in green text
 
 // save script in script.sh file
 file_put_contents('script.sh', $sh);
