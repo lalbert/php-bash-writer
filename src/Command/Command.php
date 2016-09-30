@@ -2,17 +2,12 @@
 
 namespace BashWriter\Command;
 
-use Symfony\Component\Console\Formatter\OutputFormatter;
-use Symfony\Component\Console\Formatter\OutputFormatterInterface;
-
 class Command implements CommandInterface
 {
     const COMMAND_EOL = "\n";
 
     private $command;
     private $options;
-
-    private $formatter;
 
     protected $print = true;
     protected $nl = true;
@@ -33,34 +28,6 @@ class Command implements CommandInterface
         if (isset($options['nl'])) {
             $this->setNl($options['nl']);
         }
-    }
-
-    /**
-     * Retrieve current output formatter.
-     *
-     * @return \Symfony\Component\Console\Formatter\OutputFormatterInterface
-     */
-    public function getFormatter()
-    {
-        if (!$this->formatter) {
-            $styles = isset($this->options['styles']) ? $this->options['styles'] : [];
-            $this->formatter = new OutputFormatter(true, $styles);
-        }
-
-        // Always activate decoration
-        $this->formatter->setDecorated(true);
-
-        return $this->formatter;
-    }
-
-    /**
-     * Set output formatter.
-     *
-     * @param OutputFormatterInterface $outputFormatter
-     */
-    public function setFormatter(OutputFormatterInterface $outputFormatter)
-    {
-        $this->formatter = $outputFormatter;
     }
 
     /**
