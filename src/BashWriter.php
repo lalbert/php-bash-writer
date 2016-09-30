@@ -42,7 +42,7 @@ class BashWriter implements ScripterInterface
         }
 
         if (!\is_object($command)) {
-            throw new \InvalidArgumentException(\sprintf('$command must be an object and must be implements %s.', ScripterInterface::class));
+            throw new \InvalidArgumentException(\sprintf('$command must be a string or an object; %s type given', \gettype($command)));
         }
 
         if (!$command instanceof ScripterInterface) {
