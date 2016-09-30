@@ -15,8 +15,7 @@ class EchoCommand extends Command
         $script[] = '-e';
 
         $script[] = '"'.\addcslashes($this->getFormatter()->format($this->getRawCommand()), '"').'"';
-        $script[] = Command::COMMAND_EOL;
 
-        return implode(' ', $script);
+        return implode(' ', $script) . Command::COMMAND_EOL;
     }
 }
