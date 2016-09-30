@@ -29,9 +29,7 @@
 	},
 	"autoload-dev" : {
 		"psr-4" : {
-			"BashWriter\\Tests\\" : [
-				"tests/unit"
-			]
+			"BashWriter\\Tests\\" : "tests/BashWriter/Test"
 		}
 	},
 	"support" : {
