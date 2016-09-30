@@ -27,7 +27,7 @@ class BashWriterTest extends \PHPUnit_Framework_TestCase
         $sh->addCommand('echo "content file" > file.txt', ['print' => false]); // add content in file.txt, shows nothing
 
         $sh->newLine(true);
-        $sh->echo('<info>Done</info>'); // print "Done" in green text
+        $sh->print('<info>Done</info>'); // print "Done" in green text
 
         $result = <<<'SCRIPT'
 #!/bin/bash

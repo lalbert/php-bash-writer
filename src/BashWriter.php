@@ -65,7 +65,7 @@ class BashWriter implements ScripterInterface
      *
      * @return \BashWriter\BashWriter
      */
-    public function echo($message = null, array $options = [])
+    public function print($message = null, array $options = [])
     {
         if (\is_null($message) || empty($message)) {
             return $this->addCommand(new Command('echo', ['print' => false]));
@@ -86,7 +86,7 @@ class BashWriter implements ScripterInterface
     public function newLine($echo = false)
     {
         if ($echo) {
-            return $this->echo();
+            return $this->print();
         }
 
         return $this->addCommand(new Command(Command::COMMAND_EOL, ['print' => false, 'nl' => false]));
